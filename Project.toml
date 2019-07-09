@@ -1,0 +1,12 @@
+name = "TestTravis"
+uuid = "a6da61be-a1fb-11e9-23d8-8b85661bf281"
+authors = ["WooKyoung Noh <wookay.noh@gmail.com>"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Jive = "ba5e3d4b-8524-549f-bc71-e76ad9e9deed"
+Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
+
+[targets]
+test = ["Test", "Jive", "Distributed"]
