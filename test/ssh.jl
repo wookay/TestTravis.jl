@@ -11,11 +11,16 @@ addprocs_with_testenv(machines; kwargs...) = addprocs(machines; exename=test_exe
 ws = workers()
 
 machines = [("localhost", 1)]
-addprocs_with_testenv(machines)
-
-wid = first(setdiff(workers(), ws))
+try
+    addprocs_with_testenv(machines)
+catch err
+    @test err isa CompositeException
+end
 
 @test Distributed.PGRP.workers[1] isa Distributed.LocalProcess
-@test Distributed.PGRP.workers[wid] isa Distributed.Worker
+wsdiff = setdiff(workers(), ws)
+if !isempty(wsdiff)
+    @test Distributed.PGRP.workers[wsdiff[1]] isa Distributed.Worker
+end
 
 end # module test_ssh
