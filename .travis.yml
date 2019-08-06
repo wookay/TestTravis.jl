@@ -17,6 +17,10 @@ julia:
   - nightly
 
 matrix:
+  include:
+    - os: osx
+    - os: windows
+
   exclude:
     - os: osx
       julia:
