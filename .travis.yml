@@ -19,7 +19,8 @@ julia:
 matrix:
   exclude:
     - os: osx
-      julia: nightly, 1.2
+      julia: nightly
 
     - os: windows
-      julia: nightly, 1.2
+      julia: nightly
+      julia: 1.0
