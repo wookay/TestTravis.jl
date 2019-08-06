@@ -1,5 +1,5 @@
 module TestTravis
 
-greet() = print("Hello World!")
+greet() = true
 
 end # module

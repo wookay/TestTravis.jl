@@ -1,2 +1,3 @@
-using Jive
-runtests(@__DIR__)
+using Test, TestTravis
+
+@test TestTravis.greet()
